@@ -1,6 +1,8 @@
 let engineIndicatorLight = 'red blinking';
 let fuelLevel = 21000;
-let engineTemperature = 1200;
+let engineTemp = 1200;
+let commmandOverride = true;
+
 
 /* 5) Implement the following checks using if/else if/else statements:
 
@@ -17,8 +19,22 @@ e) If fuelLevel is below 1000 OR engineTemperature is above 3500 OR engineIndica
 f) Otherwise, print "Fuel and engine status pending..." */
 
 // Code 5a - 5f here:
-
+if (fuelLevel < 1000 || engineTemp > 3500 || engineIndicatorLight ==='red blinking') {
+        console.log('ENGINE FAILURE IS IMMINTMENT')
+    }   else if (fuelLevel > 1000 && fuelLevel <= 5000 || engineTemp > 2500) {
+        console.log('Check fuel level. engine is running hot');
+    }   else if (fuelLevel > 5000 && fuelLevel < 10000 && engineTemp <= 2500) {
+        console.log("Fuel level is above 25%. Enigine is good!");
+    }   else if (fuelLevel > 10000 && fuelLevel <=20000 && engineTemp <=2500) {
+        console.log('Fuel level is above 50%. engine good')
+    }   else if (fuelLevel > 20000 && engineTemp <= 2500) {
+        console.log('Full tank.engine is good!');
+    }   else console.log('fuel engine status pending');
+    
 // 6) a) Create the variable commandOverride, and set it to be true or false. If commandOverride is false, then the shuttle should only launch if the fuel and engine check are OK. If commandOverride is true, then the shuttle will launch regardless of the fuel and engine status.
 
 /* 6) b) Code the following if/else check:
 If fuelLevel is above 20000 AND engineIndicatorLight is NOT red blinking OR commandOverride is true print "Cleared to launch!" Else print "Launch scrubbed!" */
+if (fuelLevel > 20000 && engineIndicatorLight !== "red blinking" || commmandOverride) {
+    console.log('cleared to launch!');
+} else console.log('launch is scrubbed');
