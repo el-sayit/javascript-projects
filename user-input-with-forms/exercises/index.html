@@ -6,10 +6,42 @@
     <style>
       label { display: block; margin-bottom: 7px;}
     </style>
+   <script src="script.js"></script>
   </head>
+  
   <body>
     <!-- TODO: add form here -->
-    
+    <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+      <p><label for="testName">Test Name</label>
+      <input type="text" name="testName">
+      </p>
+      <p>
+        <label for="testDate">Test Date</label>
+        <input type="date" name="testDate" id="">
+      </p>
+      <p>
+        <label for="rocketType">Rocket Type</label>
+        <select name="rocketType" id="rocketType">
+          <option value="brant">Brant</option>
+          <option value="lynx">Lynx</option>
+          <option value="orion">Orion</option>
+          <option value="terrier">Terrier</option>
+        </select>
+      </p>
+      <p>
+        <label for="boosterCount">Number of Rocket Boosters</label>
+        <input type="number" name="boosterCount" id="boosterCount" min="1" max="10">
+      </p>
+      <p>Wind Rating
+        <label>No wind<input type="radio" value="0" name="windRating"></label>
+        <label>Mild<input type="radio" value="10" name="windRating"></label>
+        <label>Strong<input type="radio" value="20" name="windRating"></label>
+        
+      </p>
+      <label for="productionServers">Use productiongrade servers</label>
+      <input type="checkbox" value="on" name="productionServers" id="productionServers" value="">
+    <button>Run simulation</button>
+    </form>
 
     <p>WARNING: This ONLY works in <b>replit</b> if this "result" page is opened in its own window. Click the icon that shows a box with an arrow coming out of it.
     </p>
